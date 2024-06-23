@@ -1,0 +1,164 @@
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+header {
+    background-color: rgb(43, 108, 163);
+}
+
+.headertitle {
+    background-color: rgb(43, 108, 163);
+    color: #ffffff;
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.navbar-left {
+    display: flex;
+}
+
+.navbar-item {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 1rem;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.login-btn {
+    padding: 0.5rem 1rem;
+    background-color: #fff;
+    color: #333;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbar-left {
+        margin-bottom: 1rem;
+    }
+
+    .navbar-right {
+        margin-top: 1rem;
+    }
+
+    .footer-column p{
+        padding:0 10px;
+    }
+}
+
+main {
+    flex: 1;
+}
+
+footer {
+    background-color: rgb(43, 108, 163);
+    /* Background color for the footer */
+    color: white;
+    /* Text color for the footer */
+
+}
+
+.footer-top {
+    text-align: left;
+    background-color: rgb(43, 108, 163);
+    /* Same as header background color */
+    padding: 50px 10px;
+    font-size: 25px;
+}
+
+.footer-top a{
+    text-decoration: none;
+    color: white;
+}
+
+.footer-middle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-top: 1px solid white;
+    /* White line to separate rows */
+    border-bottom: 1px solid white;
+    /* White line to separate rows */
+    padding: 10px 0;
+    background-color: black;
+}
+
+.footer-column {
+    flex: 1;
+    text-align: center;
+    border-right: 1px solid white;
+}
+
+
+
+.footer-bottom {
+    text-align: left;
+    background-color: rgb(43, 108, 163);
+    /* Same as header background color */
+    padding: 20px 0;
+}
+
+.newsletter {
+    display: inline-block;
+    background-color: rgb(43, 108, 163);
+    /* Same as header background color */
+    padding: 10px;
+}
+
+.newsletter h3 {
+    font-size: 36px;
+    font-weight: bold;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.newsletter form {
+    display: flex;
+    flex-direction: column;
+}
+
+.newsletter label {
+    margin-bottom: 10px;
+    font-size: 26px;
+}
+
+.newsletter input[type="email"] {
+    padding: 5px;
+    margin-bottom: 5px;
+    width: 250px;
+}
+
+
+
+.newsletter button {
+    padding: 5px;
+    margin-top: 5px;
+    background-color: #fff;
+    /* Button background color */
+    color: #333;
+    /* Button text color */
+    border: none;
+    cursor: pointer;
+    width: 100px;
+}
