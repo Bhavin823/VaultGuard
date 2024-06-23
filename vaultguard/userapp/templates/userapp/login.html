@@ -1,0 +1,30 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+{% block content %}
+
+    <div class="signup-heading">
+        <h1>Login</h1>
+    </div>
+    <div class="signup-container login-container">
+        <form class="login-form" method="post" action="{% url "loginhandle" %}">
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            <div class="form-inpt">
+                <input type="text" name="email" placeholder="Enter email" style="color: black;"
+                required>
+            </div>
+            <div class="form-inpt">
+                <input type="password" name="pass" id="pass" placeholder="Enter Password" style="color: black;"
+                required>
+            </div>
+            <button class="btn btn-default signin-btn" type="submit" value="submit">
+                Login
+            </button>
+            <br>
+            <h5 style="font-size: larger;">Dont Have Account? <a href="{% url 'signup' %}">Register</a></h5>
+        </form>
+        {% if messagekey %}
+            <script>alert("{{ messagekey }}")</script>
+        {% endif %}
+    <div>
+{% endblock content %}

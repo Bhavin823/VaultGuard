@@ -1,0 +1,40 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="signup-heading">
+    <h1>Sign Up</h1>
+</div>
+<div class="signup-container">
+    <form class="signup-form" method="post" action="{% url 'signuphandle' %}">
+        {% csrf_token %}
+        
+        <div class="form-inpt">
+            <input type="text" name="name" id="name" placeholder="Username" style="color: black;" {{ username }} required />
+        </div>
+        <div class="form-inpt">
+            <input type="email" name="email"  placeholder="Email Address" style="color: black;" {{ email }} required />
+        </div>
+        <!-- <div class="form-inpt">
+            <input type="text" name="firstname" id="firstname" placeholder="Firstname" style="color: black;"{{ firstname }} required>
+        </div>
+        <div class="form-inpt">
+            <input type="text" name="lastname" id="lastname" placeholder="Lastname" style="color: black;" {{ lastname }} required>
+        </div> -->
+        <div class="form-inpt">
+            <input type="password" name="pass" id="pass" placeholder="Password" style="color: black;" required />
+        </div>
+        <div class="form-inpt">
+            <input type="password" name="re_pass" id="re_pass" placeholder="Repeat your password" style="color: black;" required />
+        </div>
+        <button class="btn btn-default signin-btn" type="submit" value="Submit">
+            Sign Up
+        </button>
+        <br>
+        <h5 style="font-size: larger;">Already have an account? <a href="{% url "login" %}">Login</a></h5>
+    </form>
+    {% if messagekey %}
+        <script>alert("{{ messagekey }}")</script>
+    {% endif %}
+</div>
+{% endblock content %}

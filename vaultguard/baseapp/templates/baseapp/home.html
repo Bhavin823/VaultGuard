@@ -1,0 +1,59 @@
+{% extends "baseapp/base.html" %}
+{% load static %}
+
+{% block content %}
+    <section class="main-section">
+        <h1 class="main-heading" style="margin: 0px 0px 5px 10px;">
+            Secure Password</h1>
+        <h1 class="main-heading" style="margin:5px 0px 10px 10px;">Manager</h1>
+    </section>
+    <hr style="margin-bottom: 0px;"> 
+    <section class="features-section">
+        <div class="features-left">
+            <h2>The Easy Way</h2>
+            <div class="para1">
+                <p>VaultGuard is a leading provider of secure password management solutions. Our encryption keeps your passwords safe and ensures that only you have access to your sensitive information. With VaultGuard, you can generate strong, unique passwords, securely share passwords with trusted individuals or team members, and access your passwords across devices with ease. Our user-friendly interface makes password management simple and hassle-free, allowing you to focus on what matters most. Join VaultGuard today and experience the peace of mind that comes with knowing your passwords are safe and secure.</p>
+            </div>
+            <img src="{% static 'images/valutguardimg1.jpg' %}" alt="Image 1" width="276" height="291" style="object-fit: cover;">
+            <div class="getstarted">
+                <a href="{% url 'signup' %}">Get Started</a>
+            </div>
+        </div>
+        <div class="features-right">
+            <img src="{% static 'images/valutguardimg2.jpg' %}" alt="Image 2" style="height: 100%;">
+        </div>
+    </section>
+    <section class="cta">
+        <h2>Get Started</h2>
+        <div>
+            <a href="{% url 'signup' %}" class="btn">Sign Up</a>
+            <a href="login.html" class="btn">Login</a>
+        </div>
+    </section>
+    <section class="main-section aboutus">
+        <h1 class="main-heading" style="margin: 0px 0px 5px 10px;">
+            About Us    
+        </h1>
+    </section>    
+    <section class="features-section aboutus">
+        <div class="features-left aboutus">
+            <h2>Our Story</h2>
+            <div class="para1">
+                <p>VaultGuard was founded by a group of technology veterans who saw a need for secure password management solutions. We built our platform by closely listening to our clients and understanding their expectations. Our smart, innovative services have helped dozens of companies worldwide. Join our fast-growing customer base and experience the peace of mind that comes with knowing your passwords are safe and secure.</p>
+            </div>
+
+        </div>
+        <div class="features-right aboutus">
+            <video crossorigin="anonymous" playsinline="" preload="auto" muted="" loop="" tabindex="-1" autoplay="" src="{% static 'images/file.mp4' %}" ></video>
+        </div>
+    </section> 
+    <section class="main-section technology">
+        <h1 class="main-heading" style="margin: 0px 0px 5px 10px;">
+            Our Technology    
+        </h1>
+        <div class="para2"> 
+            <p>At VaultGuard, we use encryption to keep your passwords safe. Our platform is designed to be easy to use, allowing you to generate strong, unique passwords, securely share passwords with trusted individuals or team members, and access your passwords across devices with ease. Our technology is constantly evolving to stay ahead of emerging threats, ensuring that your information is always secure.</p> 
+        </div>
+    </section>
+    
+{% endblock content %}
