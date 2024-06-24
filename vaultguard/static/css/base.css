@@ -66,6 +66,20 @@ header {
     .footer-column p{
         padding:0 10px;
     }
+
+    .footer-middle{
+        flex-direction: column;
+    }
+
+    .footer-column{
+        border-bottom: 1px solid white;
+    }
+
+    .footer-column:nth-of-type(3) { 
+        border-bottom: 0;
+    };
+
+
 }
 
 main {
@@ -95,8 +109,8 @@ footer {
 
 .footer-middle {
     display: flex;
-    justify-content: space-around;
-    align-items: center;
+    /* justify-content: space-around;
+    align-items: center; */
     border-top: 1px solid white;
     /* White line to separate rows */
     border-bottom: 1px solid white;
@@ -111,7 +125,9 @@ footer {
     border-right: 1px solid white;
 }
 
-
+.footer-column:nth-of-type(3) { 
+    border-right: 0;
+};
 
 .footer-bottom {
     text-align: left;
