@@ -4,16 +4,14 @@ from cryptography.fernet import Fernet
 import base64
 from django.conf import settings
 
-def encrypt_passowrd(password):
-    secret_key = settings.SECRET_KEY.encode()
-    fernet = Fernet(secret_key)
-    encrypted_passowrd = fernet.encrypt(password.encode()).decode()
-    return encrypted_passowrd
+fernet = Fernet(settings.FERNET_KEY)
 
-def decrypt_password(encrypted_passowrd):
-    secret_key = settings.SECRET_KEY.encode()
-    fernet = Fernet(secret_key)
-    decrypted_password = fernet.decrypt(encrypted_passowrd.encode()).decode()
+def encrypt_passowrd(password):
+    encrypted_password = fernet.encrypt(password.encode()).decode()
+    return encrypted_password
+
+def decrypt_password(encrypted_password):
+    decrypted_password = fernet.decrypt(encrypted_password.encode()).decode()
     return decrypted_password
 
 

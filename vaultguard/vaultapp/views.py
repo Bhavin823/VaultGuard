@@ -1,5 +1,5 @@
 from django.shortcuts import render,redirect
-from .models import PasswordVault
+from .models import PasswordVault,encrypt_passowrd,decrypt_password
 from django.contrib.auth.decorators import login_required
 
 
@@ -29,12 +29,14 @@ def addPasswordHandleView(request):
         site = request.POST.get('site','')
         username = request.POST.get('username','')
         password = request.POST.get('password','')
+
+        encrypted_password = encrypt_passowrd(password)
         
         vault = PasswordVault()
         vault.user = request.user
         vault.username_of_website = username
         vault.website = site
-        vault.password_of_website = password
+        vault.password_of_website = encrypted_password
         vault.save()
     
     return redirect('password-list')
@@ -46,9 +48,10 @@ def deletePasswordVIew(request,id):
 
 def passwordDetailView(request,id):
     passwordVault = PasswordVault.objects.get(pk=id)
-    
+    decrypted_password = decrypt_password(passwordVault.password_of_website)
     context = {
-        'passwordDetail' :passwordVault,   
+        'passwordDetail' :passwordVault, 
+        'password_of_website':decrypted_password,  
     }
 
     return render(request,'vaultapp/password_detail.html',context)
