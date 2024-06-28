@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+import os
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -19,14 +19,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/5.0/howto/deployment/checklist/
 
+from dotenv import load_dotenv
+load_dotenv(os.path.join(BASE_DIR, '.env'))
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-o+u=%+(myc*2+j=a1c#&ql7ttl!p9vf-0l+q=0&qth1qk^d3d!'
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # For Encrytion and Decryption of password
-FERNET_KEY = '_OMXdfx1e9UXXNzYyaJuUxsPA6Uf9Zuu7esSK9CeIws=' #
+FERNET_KEY = os.getenv('FERNET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv('DEBUG','False') == 'True'
 
 ALLOWED_HOSTS = ['VaultGuard.pythonanywhere.com','127.0.0.1']
 
