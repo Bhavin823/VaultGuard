@@ -1,3 +1,4 @@
 venv
 __pycache__
 vaultguard/db.sqlite3
+vaultguard/.env
