@@ -28,7 +28,9 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 FERNET_KEY = os.getenv('FERNET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
+
 DEBUG = os.getenv('DEBUG','False') == 'True'
+
 
 ALLOWED_HOSTS = ['VaultGuard.pythonanywhere.com','127.0.0.1']
 
