@@ -62,9 +62,11 @@ document.addEventListener("DOMContentLoaded",function(){
             },1500)
         });
         
-        // togle-password visiability
-        let togglePasswordIcon = document.getElementById('toggle-password-icon');
-        let passwordDisplay = document.getElementById('password-display');
+    // togle-password visiability
+    let togglePasswordIcon = document.getElementById('toggle-password-icon');
+    let passwordDisplay = document.getElementById('password-display');
+    
+    if(togglePasswordIcon && passwordDisplay && ogPassword){
         passwordDisplay.innerText = star(ogPassword.value.length)
         
         let passwordVisible = false;
@@ -83,6 +85,7 @@ document.addEventListener("DOMContentLoaded",function(){
             }
         
         });
+    }
     }
 
 
@@ -196,7 +199,25 @@ document.addEventListener("DOMContentLoaded",function(){
 
 
     } 
-
+    
+    // updatepassword page show-password-toggle
+    let inputval = document.getElementById('updaepassword')
+    let toggleupdatePasswordIcon = document.getElementById('toggle-updatepassword-icon');
+    
+    if(toggleupdatePasswordIcon && inputval){
+        toggleupdatePasswordIcon.addEventListener("click",function(){
+            if (inputval.type === 'password'){
+                inputval.type = "text";
+                toggleupdatePasswordIcon.classList.remove("fa-eye");
+                toggleupdatePasswordIcon.classList.add("fa-eye-slash");
+            }else{
+                inputval.type = 'password'
+                toggleupdatePasswordIcon.classList.remove("fa-eye-slash")
+                toggleupdatePasswordIcon.classList.add("fa-eye");
+            }
+        
+        });    
+    }
 });
 
 
