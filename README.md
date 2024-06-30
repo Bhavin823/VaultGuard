@@ -10,8 +10,6 @@ VaultGuard is a secure password management application that allows users to stor
 - [Demo](#demo)
 - [Usage](#usage)
 - [Technologies Used](#technologies-used)
-- [Project Structure](#project-structure)
-- [Contributing](#contributing)
 - [License](#license)
 - [Contact](#contact)
 
@@ -28,12 +26,14 @@ VaultGuard is a secure password management application that allows users to stor
 Check out the live demo: [VaultGuard Demo](https://vaultguard.pythonanywhere.com/)
 
 ## Usage
+
 - **Register a new account or log in with an existing account.
 - **Add new passwords to your vault.
 - **View, edit, or delete your stored passwords.
 - **Use the copy icon to quickly copy passwords to your clipboard.
 
  ## Technologies Used
+ 
  - **Frontend:
   HTML 
   CSS
