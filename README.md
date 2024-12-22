@@ -46,7 +46,6 @@ Check out the live demo: [VaultGuard Demo](https://vaultguard.pythonanywhere.com
 - Database:
   SQLite (for development)
 
-## License
 
 ## Contact
 
